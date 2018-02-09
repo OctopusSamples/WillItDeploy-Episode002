@@ -11,6 +11,7 @@ public class RandomQuotesApplicationTests {
 
 	@Test
 	public void contextLoads() {
+
 	}
 
 }
