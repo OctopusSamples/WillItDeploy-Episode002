@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Random Quotes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../resources/static/css/main.css" />
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Random Quotes</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h2>Random Quotes</h2>
+
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <blockquote>
+                <p>
+                    <span th:text="${quote}"></span>
+                </p>
+                <footer><span th:text="${author}"></span></footer>
+            </blockquote>
+        </div>
+    </div>
+
+    <form action="#" th:action="@{/quote}" method="post">
+        <input type="submit" class="btn btn-success btn-lg text-center" value="Refresh" />
+    </form>
+
+</div>
+
+<script type="text/javascript" src="webjars/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
