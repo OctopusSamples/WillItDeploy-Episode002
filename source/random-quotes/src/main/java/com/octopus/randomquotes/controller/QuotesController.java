@@ -28,6 +28,9 @@ public class QuotesController {
         model.addAttribute("quote", randomQuote.getQuoteText());
         model.addAttribute("author", randomQuote.getAuthor());
 
+        model.addAttribute("appVersion", appVersion);
+        model.addAttribute("environment", environmentName);
+
         return "quote";
     }
 
