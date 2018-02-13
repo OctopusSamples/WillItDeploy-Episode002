@@ -1,0 +1,75 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "octopusApplication": {
+      "Type": "AWS::ElasticBeanstalk::Application",
+      "Properties": {
+        "ApplicationName": "RandomQuotes"
+      }
+    },
+    "octopusApplicationVersion": {
+      "Type": "AWS::ElasticBeanstalk::ApplicationVersion",
+      "Properties": {
+        "ApplicationName": { "Ref": "octopusApplication" },
+        "Description": "#{Octopus.Release.Number}",
+        "SourceBundle": {
+          "S3Bucket": "random-quotes-app-packages",
+          "S3Key": "RandomQuotes.#{Octopus.Release.Number}.zip"
+        }
+      }
+    },
+      "octopusConfigurationTemplate": {
+        "Type": "AWS::ElasticBeanstalk::ConfigurationTemplate",
+        "Properties": {
+          "ApplicationName": { "Ref": "octopusApplication" },
+          "Description": "AWS ElasticBeanstalk Configuration Template",
+          "OptionSettings": [
+            {
+            "Namespace": "aws:autoscaling:asg",
+            "OptionName": "MinSize",
+            "Value": "1"
+          },
+          {
+            "Namespace": "aws:autoscaling:asg",
+            "OptionName": "MaxSize",
+            "Value": "1"
+          },
+          {
+            "Namespace": "aws:elasticbeanstalk:environment",
+            "OptionName": "EnvironmentType",
+            "Value": "LoadBalanced"
+          },
+          {
+            "Namespace": "aws:elasticbeanstalk:application:environment",
+            "OptionName": "SPRING_PROFILES_ACTIVE",
+            "Value": ""
+          },
+          {
+            "Namespace": "aws:elasticbeanstalk:application:environment",
+            "OptionName": "SERVER_PORT",
+            "Value": "5000"
+          }
+        ],
+        "SolutionStackName": "64bit Amazon Linux 2017.09 v2.6.5 running Java 8"
+      }
+    },
+    "environmentOne": {
+      "Type": "AWS::ElasticBeanstalk::Environment",
+      "Properties": {
+        "ApplicationName": { "Ref": "octopusApplication" },
+        "CNAMEPrefix" : "randomquotes-staging",
+        "EnvironmentName": "randomquotes-one",
+        "TemplateName": { "Ref": "octopusConfigurationTemplate" }
+      }
+    },
+    "environmentTwo": {
+        "Type": "AWS::ElasticBeanstalk::Environment",
+        "Properties": {
+          "ApplicationName": { "Ref": "octopusApplication" },
+          "CNAMEPrefix" : "randomquotes-prod",
+          "EnvironmentName": "randomquotes-two",
+          "TemplateName": { "Ref": "octopusConfigurationTemplate" }
+        }
+      }
+  }
+}
