@@ -1,0 +1,1 @@
+aws s3 cp #{Octopus.Action[Transfer Package to Octopus Server].Output.Package.FilePath} s3://#{aws.s3.bucketname}/RandomQuotes.#{Octopus.Release.Number}.zip
