@@ -10,7 +10,7 @@ Will it deploy is a video series where we try to automate the deployment of diff
 
 Our app is a quote generator called Random Quotes. The application is pretty simple but it allows us to illustrate how to deploy a Java web app to Amazon Web Services platform.
 
-![Spring Boot logo](spring-boot-logo.png)
+![Spring Boot logo](images/spring-boot-logo.png)
 
 * [Spring Boot](https://projects.spring.io/spring-boot/) web app.
 * [JUnit](http://junit.org/) unit testing framework, Mokito and Hamcrest.
@@ -19,7 +19,7 @@ Kudos to our marketing manager [Andrew](https://twitter.com/andrewmaherbne) who 
 
 ### Deployment Target
 
-![Amazon web services logo](aws-logo.png)
+![Amazon web services logo](images/aws-logo.png)
 
 * AWS - [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/).
 * Provision our cloud infrastructure with an AWS [CloudFormation Template](https://aws.amazon.com/cloudformation/).
@@ -29,11 +29,11 @@ Kudos to our marketing manager [Andrew](https://twitter.com/andrewmaherbne) who 
 
 So will it deploy? **Yes it will!** Our deployment process looks like the following.
 
-![Octopus deployment process](deployment-process.png)
+![Octopus deployment process](images/deployment-process.png)
 
 The first step is to add an Octopus AWS account, which includes our has all the details required to enable me to connect to the AWS platform, safely and securely. It is used to authenticate with AWS when deploying or executing scripts.
 
-![AWS Account details](aws-account.png)
+![AWS Account details](images/aws-account.png)
 
 Then we add the following steps to successfully deploy our app including cloud infrastructure provisioning and a zero downtime production deployment.
 
@@ -45,4 +45,4 @@ Then we add the following steps to successfully deploy our app including cloud i
 
 This project uses the following variables to store our resource group name, website name, and app settings. Nice and simple!
 
-![Project variables](project-variables.png)
+![Project variables](images/project-variables.png)
