@@ -2,7 +2,7 @@
 
 Will it deploy is a video series where we try to automate the deployment of different technologies with Octopus Deploy. Episode 2 is a great video where we try to deploy an Spring Boot web app to the AWS platform. We also explore how to automate the provisioning of our cloud infrastructure and ensure we have a zero-downtime production deployment. 
 
-[![Deploying a Spring Boot web app - Will it Deploy? Episode 2](will-it-deploy.png)](https://youtu.be/tQb8PJ0jzvk "Deploying a Spring Boot web app - Will it Deploy? Episode 2")
+[![Deploying a Spring Boot web app - Will it Deploy? Episode 2](images/will-it-deploy.png)](https://youtu.be/tQb8PJ0jzvk "Deploying a Spring Boot web app - Will it Deploy? Episode 2")
 
 ## Problem
 
