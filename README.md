@@ -2,7 +2,7 @@
 
 Will it deploy is a video series where we try to automate the deployment of different technologies with Octopus Deploy. Episode 2 is a great video where we try to deploy an Spring Boot web app to the AWS platform. We also explore how to automate the provisioning of our cloud infrastructure and ensure we have a zero-downtime production deployment. 
 
-[![Deploying a Spring Boot web app - Will it Deploy? Episode 2](images/will-it-deploy.png)](https://youtu.be/tQb8PJ0jzvk "Deploying a Spring Boot web app - Will it Deploy? Episode 2")
+[![Deploying a Spring Boot web app - Will it Deploy? Episode 2](images/will-it-deploy.png)](https://youtu.be/Pd2Wya6kvIU "Deploying a Spring Boot web app - Will it Deploy? Episode 2")
 
 ## Problem
 
@@ -31,7 +31,7 @@ So will it deploy? **Yes it will!** Our deployment process looks like the follow
 
 ![Octopus deployment process](images/deployment-process.png)
 
-The first step is to add an Octopus AWS account, which includes our has all the details required to enable me to connect to the AWS platform, safely and securely. It is used to authenticate with AWS when deploying or executing scripts.
+The first step is to add an Octopus AWS account, which includes all the details required to enable us to connect to the AWS platform, safely and securely. It is used to authenticate with AWS when deploying or executing scripts.
 
 ![AWS Account details](images/aws-account.png)
 
